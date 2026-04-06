@@ -26,12 +26,11 @@ None currently.
     <p>This app allows interaction with a canvas using buttons.</p>
 </div>
 
-<!-- Canvas where drawings will appear -->
 <canvas id="myCanvas" width="400" height="250" style="border:2px solid black;"></canvas>
 
 <br><br>
 
-<!-- Buttons to control the canvas -->
+<!-- Allows to control the canvas -->
 <button onclick="drawRectangle()">Draw Rectangle</button>
 <button onclick="drawName()">Draw Name</button>
 <button onclick="drawImage()">Load Image</button>
@@ -42,27 +41,22 @@ None currently.
 // Wait until the page fully loads before running JavaScript
 window.onload = function() {
 
-    // STEP 1: Get the canvas element from the HTML
     var canvas = document.getElementById("myCanvas");
 
-    // STEP 2: Get the drawing context (this lets us draw)
     var ctx = canvas.getContext("2d");
 
-    // STEP 3: Function to draw a rectangle
     // This will run when the "Draw Rectangle" button is clicked
     window.drawRectangle = function() {
         ctx.fillStyle = "green"; // Set color to blue
         ctx.fillRect(50, 50, 150, 80); // Draw rectangle
     };
 
-    // STEP 4: Function to draw my name
     window.drawName = function() {
         ctx.font = "24px Arial"; // Set font
         ctx.fillStyle = "purple"; // Set text color
         ctx.fillText("Matthew Kim", 100, 200); // Draw text
     };
 
-    // STEP 5: Function to load and draw an image
     window.drawImage = function() {
         var img = new Image(); // Create image object
 
@@ -74,7 +68,6 @@ window.onload = function() {
         };
     };
 
-    // STEP 6: Function to clear the canvas
     window.clearCanvas = function() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     };
